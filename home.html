@@ -89,6 +89,18 @@
     <div class="container mx-auto px-4 py-8 relative z-10">
         <!-- Header -->
         <header class="text-center mb-12">
+            <button id="menuToggle" class="absolute top-4 right-4 text-white focus:outline-none z-50">
+                <!-- Hamburger Icon -->
+                <svg id="hamburgerIcon" class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+          
+                <!-- Close Icon (hidden by default) -->
+                <svg id="closeIcon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+            
             <div class="header-decoration"></div>
             <h1 class="restaurant-name text-5xl md:text-6xl font-bold mb-4 text-amber-400">Dapoer Djawa</h1>
             <div class="w-24 h-1 bg-amber-400 mx-auto mb-6"></div>
@@ -96,24 +108,44 @@
             
             <!-- Category Icons - Now Horizontal -->
           <div class="categories-container">
-                <div class="category-icon flex flex-col items-center" a href="home.html" >
-                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-amber-900 flex items-center justify-center mb-3 border-2 border-amber-400">
-                        <i class="fas fa-utensils text-4xl text-amber-400"></i>
-                    </div>
-                    <span class="font-semibold text-amber-400 text-lg">Bakmi & Nasgor</span>
-                    <div class="w-16 h-1 bg-amber-400 mt-2"></div>
-                </div>
-                
-                <a href="pecel.html" class="category-icon flex flex-col items-center">
+            <a href="home.html" class="category-icon flex flex-col items-center">
                 <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-amber-900 flex items-center justify-center mb-3 border-2 border-amber-400">
-                    <i class="fas fa-leaf text-4xl text-amber-400"></i>
+                    <i class="fas fa-utensils text-4xl text-amber-400"></i>
                 </div>
-                <span class="font-semibold text-amber-400 text-lg">Pecelan</span>
+                <span class="font-semibold text-amber-400 text-lg">Bakmi & Nasgor</span>
                 <div class="w-16 h-1 bg-amber-400 mt-2"></div>
+                </a>
+            
+            <a href="pecel.html" class="category-icon flex flex-col items-center">
+            <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-amber-900 flex items-center justify-center mb-3 border-2 border-amber-400">
+                <i class="fas fa-leaf text-4xl text-amber-400"></i>
+            </div>
+            <span class="font-semibold text-amber-400 text-lg">Pecelan</span>
+            <div class="w-16 h-1 bg-amber-400 mt-2"></div>
             </a>
 
             </div>
         </header>
+        
+          <!-- Sidebar -->
+            <aside id="sidebar" class="fixed top-0 right-0 w-64 h-full bg-neutral-900 text-white transform translate-x-full transition-transform duration-300 z-40 shadow-lg">
+                <div class="p-4">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="text-3xl">👤</div>
+                    <div>
+                    <p class="font-bold">John Smith</p>
+                    <p class="text-sm text-gray-400">rapirahmawan@gmail.com</p>
+                    </div>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-2"><span>📄</span> <span>Riwayat Pesanan</span></li>
+                    <li class="flex items-center gap-2"><span>👤</span> <span>Profil</span></li>
+                </ul>
+                <button class="mt-10 w-full bg-neutral-800 py-2 flex items-center justify-center gap-2 rounded">
+                    <a href="login.html">🔓 Log Out</a>
+                </button>
+                </div>
+            </aside>
 
         <!-- Menu Section -->
         <section class="mb-16">
@@ -127,16 +159,16 @@
                              alt="Nasi Goreng" class="w-full h-full object-cover">
                     </div>
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Magelangan</span>
-                        <span class="text-lg font-bold text-amber-400">$8.99</span>
+                        <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Nasi Goreng</span>
+                        <span class="text-lg font-bold text-amber-400">Rp. 15.000</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Nasi Goreng</h3>
+                    <h3 class="text-xl font-bold mb-3">Nasi Goreng Jawa</h3>
                     <p class="text-gray-400 text-sm mb-4">Traditional Indonesian fried rice with sweet soy sauce, shallots, garlic, and a fried egg on top.</p>
                     
                     <div class="flex items-center justify-between">
                         <div class="flex items-center border border-gray-600 rounded-full">
                             <button class="quantity-btn px-3 py-1 text-lg rounded-l-full">-</button>
-                            <span class="px-3">1</span>
+                            <span class="px-3">0</span>
                             <button class="quantity-btn px-3 py-1 text-lg rounded-r-full">+</button>
                         </div>
                         <button class="order-btn bg-amber-500 text-white px-4 py-2 rounded-xl font-semibold text-sm">Order Now</button>
@@ -151,7 +183,7 @@
                     </div>
                     <div class="flex justify-between items-start mb-2">
                         <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Bakmi</span>
-                        <span class="text-lg font-bold text-amber-400">$9.99</span>
+                        <span class="text-lg font-bold text-amber-400">Rp. 17.000</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Bakmi Goreng</h3>
                     <p class="text-gray-400 text-sm mb-4">Stir-fried noodles with chicken, shrimp, vegetables, and our special sauce blend.</p>
@@ -159,7 +191,7 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center border border-gray-600 rounded-full">
                             <button class="quantity-btn px-3 py-1 text-lg rounded-l-full">-</button>
-                            <span class="px-3">1</span>
+                            <span class="px-3">0</span>
                             <button class="quantity-btn px-3 py-1 text-lg rounded-r-full">+</button>
                         </div>
                         <button class="order-btn bg-amber-500 text-white px-4 py-2 rounded-xl font-semibold text-sm">Order Now</button>
@@ -173,16 +205,16 @@
                              alt="Pecel" class="w-full h-full object-cover">
                     </div>
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Pecelan</span>
-                        <span class="text-lg font-bold text-amber-400">$7.99</span>
+                        <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Bihun</span>
+                        <span class="text-lg font-bold text-amber-400">Rp. 17.000</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Pecel Sayuran</h3>
-                    <p class="text-gray-400 text-sm mb-4">Traditional Javanese salad with boiled vegetables, peanut sauce, and crispy crackers.</p>
+                    <h3 class="text-xl font-bold mb-3">Bihun Goreng</h3>
+                    <p class="text-gray-400 text-sm mb-4">Stir-fried noodles with chicken, shrimp, vegetables, and our special sauce blend.</p>
                     
                     <div class="flex items-center justify-between">
                         <div class="flex items-center border border-gray-600 rounded-full">
                             <button class="quantity-btn px-3 py-1 text-lg rounded-l-full">-</button>
-                            <span class="px-3">1</span>
+                            <span class="px-3">0</span>
                             <button class="quantity-btn px-3 py-1 text-lg rounded-r-full">+</button>
                         </div>
                         <button class="order-btn bg-amber-500 text-white px-4 py-2 rounded-xl font-semibold text-sm">Order Now</button>
@@ -196,8 +228,8 @@
                              alt="Sate Ayam" class="w-full h-full object-cover">
                     </div>
                     <div class="flex justify-between items-start mb-2">
-                        <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Magelangan</span>
-                        <span class="text-lg font-bold text-amber-400">$10.99</span>
+                        <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Sate-satean</span>
+                        <span class="text-lg font-bold text-amber-400">Rp. 5.000</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Sate Ayam</h3>
                     <p class="text-gray-400 text-sm mb-4">Grilled chicken skewers with peanut sauce, served with rice cakes and sweet soy sauce.</p>
@@ -205,7 +237,7 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center border border-gray-600 rounded-full">
                             <button class="quantity-btn px-3 py-1 text-lg rounded-l-full">-</button>
-                            <span class="px-3">1</span>
+                            <span class="px-3">0</span>
                             <button class="quantity-btn px-3 py-1 text-lg rounded-r-full">+</button>
                         </div>
                         <button class="order-btn bg-amber-500 text-white px-4 py-2 rounded-xl font-semibold text-sm">Order Now</button>
@@ -220,7 +252,7 @@
                     </div>
                     <div class="flex justify-between items-start mb-2">
                         <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Pecelan</span>
-                        <span class="text-lg font-bold text-amber-400">$8.49</span>
+                        <span class="text-lg font-bold text-amber-400">Rp. 15.000</span>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Gado-Gado</h3>
                     <p class="text-gray-400 text-sm mb-4">Indonesian vegetable salad with boiled eggs, tofu, tempeh, and peanut sauce dressing.</p>
@@ -228,7 +260,7 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center border border-gray-600 rounded-full">
                             <button class="quantity-btn px-3 py-1 text-lg rounded-l-full">-</button>
-                            <span class="px-3">1</span>
+                            <span class="px-3">0</span>
             <button class="quantity-btn px-3 py-1 text-lg rounded-r-full">+</button>
         </div>
         <button class="order-btn bg-amber-500 text-white px-4 py-2 rounded-xl font-semibold text-sm">Order Now</button>
@@ -243,15 +275,15 @@
     </div>
     <div class="flex justify-between items-start mb-2">
         <span class="text-xs font-semibold px-2 py-1 bg-amber-900 text-amber-300 rounded-full">Magelangan</span>
-        <span class="text-lg font-bold text-amber-400">$7.49</span>
+        <span class="text-lg font-bold text-amber-400">Rp. 15.000</span>
     </div>
-    <h3 class="text-xl font-bold mb-3">Soto Ayam</h3>
-    <p class="text-gray-400 text-sm mb-4">Traditional Indonesian chicken soup with turmeric broth, rice, and aromatic spices.</p>
+    <h3 class="text-xl font-bold mb-3">Magelangan</h3>
+    <p class="text-gray-400 text-sm mb-4">Combination between fried rice and noodle with sweet soy sauce, shallots, garlic, and a fried egg</p>
     
     <div class="flex items-center justify-between">
         <div class="flex items-center border border-gray-600 rounded-full">
             <button class="quantity-btn px-3 py-1 text-lg rounded-l-full">-</button>
-            <span class="px-3">1</span>
+            <span class="px-3">0</span>
             <button class="quantity-btn px-3 py-1 text-lg rounded-r-full">+</button>
         </div>
         <button class="order-btn bg-amber-500 text-white px-4 py-2 rounded-xl font-semibold text-sm">Order Now</button>
@@ -264,7 +296,7 @@
         <div class="flex justify-center mt-12">
             <button class="checkout-btn text-white px-8 py-4 font-bold text-lg shadow-lg flex items-center">
                 <i class="fas fa-shopping-cart mr-3"></i>
-                Checkout (3 items)
+                Checkout (0 items)
             </button>
         </div>
     </div>
@@ -280,7 +312,7 @@
                 if (this.textContent === '+') {
                     quantity++;
                 } else {
-                    if (quantity > 1) {
+                    if (quantity > 0) {
                         quantity--;
                     }
                 }
@@ -319,6 +351,26 @@
                 }, 300);
             });
         });
-    </script>
+
+        //Hamburger Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !sidebar.classList.contains('translate-x-full');
+
+      if (isOpen) {
+        sidebar.classList.add('translate-x-full');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        sidebar.classList.remove('translate-x-full');
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+</script>
 </body>
 </html>
